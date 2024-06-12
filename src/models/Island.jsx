@@ -12,7 +12,7 @@ import { useThree, useFrame } from '@react-three/fiber'
 import islandScene from '../assets/3d/island.glb'
 import { a } from '@react-spring/three'
 
-export default function Island(props) {
+const Island = (props) => {
 
   const islandRef = useRef()
   const { nodes, materials } = useGLTF(islandScene)
@@ -49,3 +49,5 @@ export default function Island(props) {
     </a.group>
   )
 }
+
+export default Island

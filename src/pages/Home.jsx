@@ -16,7 +16,7 @@ const Home = () => {
       screenScale = [1, 1, 1]
     }
 
-    return screenScale, screenPosition, rotation
+    return [screenScale, screenPosition, rotation]
   }
 
   const [islandScale, islandPosition, isLandRotation] = adjustIslandForScreenSize()
@@ -42,9 +42,9 @@ const Home = () => {
             <hemisphereLight />
 
             <Island
-              scale={islandScale}
-              position={islandPosition}
-              rotation={isLandRotation} 
+               scale={islandScale}
+               position={islandPosition}
+               rotation={isLandRotation}
             />
            </Suspense>
         </Canvas>
