@@ -6,6 +6,7 @@ import Sky from '../models/Sky'
 import Bird from '../models/Bird'
 import Plane from '../models/Plane'
 import Airship from '../models/Airship'
+import HomeInfo from '../components/HomeInfo'
 
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false)
@@ -46,10 +47,9 @@ const Home = () => {
 
   return (
     <section className='w-full h-screen relative'>
-        {/* <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
-          POPUP
-          Hi, my name is Eric
-        </div> */} 
+        <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+          {currentStage && <HomeInfo currentStage={currentStage} />}
+        </div> 
 
         {/* 3D Rendering of hero page || npm install @react-three/fiber || I'll use this instead of three.js*/}
         <Canvas 
