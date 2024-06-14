@@ -28,6 +28,16 @@ export default function Fox({ currentAnimation, speed=0.75, ...props}) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [actions, currentAnimation, speed])
 
+  //Adjust Texture
+  useEffect(() => {
+    // Adjust the material properties to reduce shininess
+    const foxMaterial = materials['08_-_Default']
+    if (foxMaterial) {
+      foxMaterial.roughness = 0.6 // Increase roughness to make the material less shiny
+      foxMaterial.metalness = 0 // Decrease metalness to make the material less metallic
+    }
+  }, [materials])
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">

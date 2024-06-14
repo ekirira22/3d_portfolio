@@ -21,8 +21,17 @@ const Contact = () => {
 
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-    setCurrentAnimation('Fox_Walk_InPlace')
+    const { name, value } = e.target
+
+    // Determine if characters were inserted or deleted
+    if (value.length > formData[name].length) {
+      setCurrentAnimation('Fox_Walk_InPlace')
+    } else {
+      setCurrentAnimation('Fox_Walk_Back_InPlace')
+    }
+
+    // Update form data
+    setFormData({ ...formData, [name]: value })
   }
 
 
@@ -58,15 +67,17 @@ const Contact = () => {
 
       // TODO: Hide an alert
 
+      //Clear Form
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      })
       //Timeout to fox stop from running
       setTimeout(() => {
-        setCurrentAnimation('Fox_Idle')
-        setFormData({
-          name: '',
-          email: '',
-          message: '',
-        })
-      }, [3000])
+        setCurrentAnimation('Fox_Sit_Idle_Break')
+      }, [2000])
+
     }).catch((error) => {
       setCurrentAnimation('Fox_Sit_No')
       setIsLoading(false)
@@ -76,7 +87,7 @@ const Contact = () => {
   }
 
   return (
-    <section className='relative flex lg:flex-row flex-col max-container'>
+    <section className='relative flex lg:flex-row flex-col max-container h-screen'>
       <div className='flex-1 min-w-[50%] flex flex-col'>
         <h1 className='head-text'>Get in Touch</h1>
         <h3 className='font-semibold'>What does the fox say ... 🎶</h3>
@@ -146,15 +157,15 @@ const Contact = () => {
       <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
         <Canvas camera={{ position: [0, 0, 5], fov:75, near:0.1, far:1000 }}>
           {/* Add lighting */}
-          <directionalLight intensity={1.5} position={[0, 0, 1]} />
-          <ambientLight intensity={0.75} />
+          <directionalLight intensity={2.0} position={[0, 0, 1]} />
+          <ambientLight intensity={0.7} />
 
           {/* Add model */}
           <Suspense fallback={<Loader />}>
             <Fox 
-              position={[0.5, -2.5, 0]}
+              position={[0.1, -2.4, 0]}
               rotation={[12.6, -0.7, 0]}
-              scale={[0.25, 0.25, 0.25]}
+              scale={[0.23, 0.23, 0.23]}
               currentAnimation={currentAnimation}
               speed={0.75}
             />
