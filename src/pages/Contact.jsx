@@ -3,6 +3,8 @@ import emailjs from '@emailjs/browser'
 import { Canvas } from '@react-three/fiber'
 import Loader from '../components/Loader'
 import Fox from '../models/Fox'
+import useAlert from '../hooks/useAlert'
+import Alert from '../components/Alert'
 
 // Contact component
 const Contact = () => {
@@ -18,6 +20,10 @@ const Contact = () => {
 
   //Animation for Fox 3D Model
   const [currentAnimation, setCurrentAnimation] = useState('Fox_Idle')
+
+  //For Alerts
+  const { alert, showAlert, hideAlert} = useAlert()
+  console.log(alert)
 
 
   const handleChange = (e) => {
@@ -63,31 +69,36 @@ const Contact = () => {
       import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
     ).then(() => {
       setIsLoading(false)
-      //TODO: Show success message
+      //Show success message
+      showAlert({show: true, text: 'Message sent successfully! Thank you!', type: 'success'})
 
-      // TODO: Hide an alert
-
-      //Clear Form
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-      })
       //Timeout to fox stop from running
       setTimeout(() => {
+        hideAlert()
         setCurrentAnimation('Fox_Sit_Idle_Break')
-      }, [2000])
+        //Clear Form
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        })
+      }, [3000])
 
     }).catch((error) => {
       setCurrentAnimation('Fox_Sit_No')
       setIsLoading(false)
-      console.log(error)
-      //TODO: Show error message
+      //Show error message
+      showAlert({show: true, text: `Message not sent: ${error.text}`, type: 'danger'})
     })
   }
 
   return (
     <section className='relative flex lg:flex-row flex-col max-container h-screen'>
+      {/* Show Alert */}
+      {alert.show && <Alert {...alert} />}
+      {/* <Alert {...alert} /> */}
+
+      {/* Form */}
       <div className='flex-1 min-w-[50%] flex flex-col'>
         <h1 className='head-text'>Get in Touch</h1>
         <h3 className='font-semibold'>What does the fox say ... 🎶</h3>
