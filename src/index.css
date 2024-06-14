@@ -11,6 +11,7 @@
 
 body {
   font-family: "Work Sans", sans-serif;
+  transition: all 350ms;
 }
 
 body:has(.card[data-color="blue"]:hover) {

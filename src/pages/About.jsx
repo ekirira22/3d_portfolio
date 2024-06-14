@@ -1,8 +1,99 @@
-import React from 'react'
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import { skills, experiences } from '../constants';
 
 const About = () => {
   return (
-    <div>About</div>
+    <section className='max-container'>
+      <h1 className='head-text'>
+        Hello, I'm <span className='blue-gradient_text font-semibold'>Eric</span> 👋🏾
+      </h1>
+
+      <div className='mt-5 flex flex-col gap-3 text-slate-500'>
+        <p>
+          Software Engineer hailing from Kenya, turning ideas into reality by crafting and deploying web applications both solo and as part of collaborative project teams!
+        </p>
+      </div>
+
+      {/* Skills */}
+      <div className="py-10 flex flex-col">
+        <h3 className='subhead-text'>My Skills</h3>
+        <div className="mt-16 flex flex-wrap gap-12">
+          { skills.map((skill) => (
+            <div key={skill.name} className='block-container w-20 h-20'>
+              <div className='btn-back rounded-xl' />
+              <div className='btn-front rounded-xl flex justify-center items-center'>
+                <img 
+                  src={skill.imageUrl}
+                  alt={skill.name}
+                  className='w-12 h-12 object-contain'
+                />
+              </div>
+            </div>
+          )) }
+        </div>
+      </div>
+
+      {/* Experience */}
+      <div className='py-16'>
+          <h3 className='subhead-text'>Work Experience</h3>
+          <div className='mt-5 flex flex-col gap-3 text-slate-500'>
+            <p>
+              I've worked with all sorts of companies, clients and individual contributors, leveling up my skills and teaming up with creative people across the board. Here's the rundown:
+            </p>
+        </div>
+          
+          {/* We will use react vertical timeline component to display the experience. 
+            npm install react-vertical-timeline-component*/}
+        <div className='mt-12 flex'>
+            <VerticalTimeline>
+              {
+                experiences.map((experience) => (
+                  <VerticalTimelineElement 
+                    key={experience.company_name} 
+                    date={experience.date}
+                    icon={
+                      <div className='flex justify-center items-center w-full h-full'>
+                        <img
+                          src={experience.icon}
+                          alt={experience.company_name}
+                          className='w-[70%] h-[70%] object-contain'
+                        />
+                      </div>
+                    }
+                    iconStyle={{ 
+                      background: experience.iconBg
+                    }}
+                    contentStyle={{
+                      borderBottom: "8px", 
+                      borderStyle: "solid", 
+                      borderBottomColor: experience.iconBg,
+                      boxShadow: "none",
+                    }}
+                  >
+                    <div>
+                      <h3 className='text-black text-xl font-poppins font-semibold'>
+                        {experience.title}
+                      </h3>
+                      <p className='text-black-500 font-medium font-base' style={{margin:0}}>
+                        {experience.company_name}
+                      </p>
+                    </div>
+
+                    <ul className='my-5 list-disc ml-5 space-y-2'>
+                      {experience.points.map((point, index) => (
+                        <li key={`experience-point-${index}`} className='text-black-500/70 font-normal pl-1 text-sm'>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </VerticalTimelineElement>
+                ))
+              }
+            </VerticalTimeline>
+        </div>
+      </div>
+    </section>
   )
 }
 

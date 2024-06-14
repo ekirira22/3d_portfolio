@@ -7,10 +7,10 @@ const NavBar = () => {
             <p className='blue-gradient_text'>EKIM</p>
         </NavLink>
         <nav className='flex text-lg gap-7 font-medium'>
-            <NavLink to='/about' className={({ isActive }) => isActive ? 'text-cyan-500' : 'text-black'}>
+            <NavLink to='/about' className={({ isActive }) => isActive ? 'blue-gradient_text' : 'text-black'}>
                 About
             </NavLink>
-            <NavLink to='/projects' className={({ isActive }) => isActive ? 'text-cyan-500' : 'text-black'}>
+            <NavLink to='/projects' className={({ isActive }) => isActive ? 'blue-gradient_text' : 'text-black'}>
                 Projects
             </NavLink>
         </nav>
