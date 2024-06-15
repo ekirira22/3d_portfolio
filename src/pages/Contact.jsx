@@ -23,8 +23,6 @@ const Contact = () => {
 
   //For Alerts
   const { alert, showAlert, hideAlert} = useAlert()
-  console.log(alert)
-
 
   const handleChange = (e) => {
     const { name, value } = e.target
