@@ -129,21 +129,21 @@ export const experiences = [
         iconBg: "#f7d7d8",
         date: "May 2021 - Nov 2022",
         points: [
-            "Managed the service department within the company, focusing on meeting customers' needs during their stay at the guest house, achieving a remarkable 200% improvement in customer satisfaction.",
-            "Employed effective digital marketing initiatives and search engine optimizations, leading to a 2-times increase in walk-in traffic, enhancing the company’s online visibility.",
-            "Spearheaded the development of the company's primary website, resulting in a minimum 80% conversion rate of online traffic to sales, contributing significantly to the company's 15% annual revenue growth in 2022.",
+            "Led digital marketing initiatives, doubling walk-in traffic and achieved a 200% improvement in customer satisfaction",
+            "Developed the primary website, resulted in an 80% conversion rate and contributed to a 15% annual revenue growth",
+            "Directed the strategic enhancement of the company’s online presence and resulted to 2x increase in online customer base"
         ],
     },
     {
-        title: "IT Support Specialist",
+        title: "Support Specialist",
         company_name: "KeRRA",
         icon: kerra,
         iconBg: "#d2fcd5",
         date: "Dec 2022 - Nov 2023",
         points: [
-            "Aggregated unstructured employee access log data from the building's 3 primary entry points.",
-            "Performed data cleaning activities and transformed the data into a well-structured format, making it readily usable for the ICT Security Manager.",
-            "Actively monitored access card log activities for all KeRRA employees, effectively detecting and reporting anomalous incidents, enhancing overall security by 60%.",
+            "Implemented Microsoft Dynamics NAV ERP, improved project workflow and received 100% positive feedback, collaborated with cross-functional teams to improve project workflows and reduce downtime",
+            "Configured and deployed VPNs using Fortinet across multiple remote regions within the country, reduced downtime by 50%",
+            "Managed and troubleshot Active Directory accounts"
         ],
     },
     {
@@ -151,12 +151,11 @@ export const experiences = [
         company_name: "Sapama Tech",
         icon: sapama,
         iconBg: "#9e9ef7",
-        date: "Dec 2023 - Feb 2024",
+        date: "Dec 2023 - Present",
         points: [
-            "Helped clients integrate Mpesa payment solutions into their websites and applications.",
-            "Provided technical support and troubleshooting to our clients and ensured compliance with Mpesa standards and regulations.",
-            "Maintained and installed Sapama Technology's products, such as Sapama ERP and Sapama Property Management Software, for our clients. Involved in software lifecycle from development to deployment and support.",
-            "Provided training and documentation to clients and ensure optimal performance and user satisfaction with Sapama Products.",
+            "Integrate secure Mpesa payment solutions for clients, ensuring 100% compliance and increasing client satisfaction by 20%",
+            "Provide training and documentation, resulting in a 30% improvement in user satisfaction",
+            "Classify and resolve technical issues, explore root causes and maintain ownership until resolution, ensure timely updates and closure"
         ],
     },
     {

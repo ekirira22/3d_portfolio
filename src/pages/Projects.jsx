@@ -14,7 +14,7 @@ const Projects = () => {
         <p>
           I've embarked on numerous projects throughout the years, but these are the ones I hold
           closest to my heart. Each project represents a unique challenge that I've overcome, and I'm 
-          excited to share their successes and learnings with you.
+          excited to share their successes and learnings.
 
           Many of these projects are open-source, so if you come across something that piques your interest, 
           feel free to explore the codebase and contribute your ideas for further enhancements.
