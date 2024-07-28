@@ -1,4 +1,4 @@
-import { meta, sapama, kerra, moringa, queenspark } from "../assets/images";
+import { meta, sapama, kerra, moringa, queenspark, gptx, melos, dancy, orphan } from "../assets/images";
 import {
     car,
     contact,
@@ -224,20 +224,41 @@ export const projects = [
         theme: 'btn-back-black',
         name: 'Project Management System',
         description: 'Developed a County Project Management System that enables smooth tracking of projects, organized by county, budget and fiscal year',
-        link: 'https://github.com/ekirira22/final_project.git',
+        link: 'https://cpms.primehosting.co.ke/login',
     },
     {
-        iconUrl: summiz,
+        iconUrl: gptx,
         theme: 'btn-back-yellow',
-        name: 'Digress Appointments',
-        description: 'Crafted ‘Digress Appointments’, a web application facilitating seemless doctor-patient scheduling and vice-versa.',
-        link: 'https://github.com/ekirira22/digress-appointments.git',
+        name: 'GPTX - AI Summarizer',
+        description: 'An app that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
+        link: 'https://gpt-prompter.vercel.app/',
     },
     {
-        iconUrl: threads,
+        iconUrl: orphan,
+        theme: 'btn-back-pink',
+        name: 'Orphan Reach Network',
+        description: 'Increased online donations by 30% for Orphan Reach Network by developing a robust WordPress website with Elementor, facilitating seamless donation processing',
+        link: 'https://orphanreachnetwork.org/',
+    },
+    {
+        iconUrl: dancy,
         theme: 'btn-back-green',
-        name: 'AI Summarizer - Upcoming',
-        description: 'An app that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
+        name: 'Dancy Holdings Limited',
+        description: 'Enhanced brand visibility for Dancy Holdings Ltd. by creating an intuitive website using WordPress and Divi Builder, resulting in a 20% increase in user engagement',
+        link: 'https://dancyholdings.co.ke/',
+    },
+    {
+        iconUrl: queenspark,
+        theme: 'btn-back-red',
+        name: 'Queenspark Guest House',
+        description: 'Boosted Queenspark Guest House\'s conversion rate by 80% and contributed to a 15% annual revenue growth by leading the development of their primary website with WordPress and Divi Builder',
+        link: 'https://queensparkguesthouse.co.ke/',
+    },
+    {
+        iconUrl: melos,
+        theme: 'btn-back-black',
+        name: 'Melos Music App - Upcoming',
+        description: 'A seemless music app that allows users across the globe to listen and share their favorite playlists',
         link: 'https://github.com/ekirira22?tab=repositories',
-    }
+    },
 ];
